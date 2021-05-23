@@ -11,29 +11,16 @@ public class Main
 	public static void main ( String[] args )
 	{
 		
-                Scanner scanner = new Scanner(System.in);
-                
-                
-                System.out.print("Enter list of words : ");
-        String inputString = scanner.nextLine();
+           IteratorReplacer test = new IteratorReplacer("a b c a b c","a","+");
+    test.replace();
+    System.out.println(test);
 
-      
-        System.out.print("Enter word to replace : ");
-        String wordToReplace = scanner.nextLine();
-        
-      
-        System.out.print("Enter word with which to replace the original word : ");
-        String wordToReplaceWith = scanner.nextLine();
-        
-      
-        IteratorReplacer itep = new IteratorReplacer(inputString, wordToReplace, wordToReplaceWith);
-        System.out.println( "Input list of word before replace : " + itep.toString());
-        
-        itep.replace();
-        
-        System.out.println( "Input list of word after replace : " + itep.toString());
-        
-    
-        scanner.close();		
+    test.setEmAll("a b c d e f g h i j x x x x","x","7");
+    test.replace();
+    System.out.println(test);
+
+    test.setEmAll("1 2 3 4 5 6 a b c a b c","b","#");
+    test.replace();
+    System.out.println(test);				
 	}
 }
