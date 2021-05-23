@@ -15,23 +15,31 @@ public class IteratorReplacer
 	{
 		
            String[] words = line.split(" ");
-           this.list = new ArrayList<String>( Arrays.asList(words) );
-           this.toRemove = rem;
-           this.replaceWith = rep;
+           list = new ArrayList<String>( Arrays.asList(words) );
+          toRemove = rem;
+           replaceWith = rep;
+	}
+	
+	public void setEmAll(String line, String rem, String rep)
+	{
+    String[] words = line.split(" ");
+    list = new ArrayList<String>(Arrays.asList(words));
+    toRemove = rem;
+    replaceWith = rep;
 	}
 
 	public void replace()
 	{
 		
-           ListIterator<String> li = list.listIterator();
+           ListIterator iter= list.listIterator();
            
-           while (li.hasNext()) 
+           while (iter.hasNext()) 
            {
                    
-                   if( li.next().equalsIgnoreCase(toRemove) )
+                   if( iter.next().equals(toRemove) )
                    {
                           
-                           li.set(replaceWith);
+                           iter.set(replaceWith);
                    }
        	   }
 	}
